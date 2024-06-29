@@ -4982,7 +4982,7 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
 
             Fruit:Seperator("Esp")
 
-            Fruit:Toggle("Esp Plaeyers",false,function(Value)
+            Fruit:Toggle("Esp Players",false,function(Value)
                 ESPPlayer = Value
                 UpdatePlayerChams()
             end)
