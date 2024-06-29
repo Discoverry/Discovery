@@ -4731,13 +4731,13 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
 --Players - Teleports
             Player:Seperator("Players")
 
-            local PlayersDropdown = Player:Dropdown("Select Players",Playerslist,"",function(Value)
-                getgenv().SelectPly = Value        
-            end)
             local Playerslist = {}
             for i,v in pairs(game:GetService("Players"):GetChildren()) do
                 table.insert(Playerslist,v.Name)
             end
+            local PlayersDropdown = Player:Dropdown("Select Players",Playerslist,"",function(Value)
+                getgenv().SelectPly = Value        
+            end)
             Player:Button("Refresh Players Dropdown",function()
                 Playerslist = {}
                 PlayersDropdown:Clear()
@@ -5244,14 +5244,15 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
             end)
 
             Sea2:Seperator("Boats")
-            
-            local Boats = Sea2:Dropdown("Select Boats",BoatsName,"",function(Value)
-                getgenv().SelectBoatsBring = Value       
-            end)
+
             BoatsName = {}
             for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
             table.insert(BoatsName ,v.Name)
             end
+            local Boats = Sea2:Dropdown("Select Boats",BoatsName,"",function(Value)
+                getgenv().SelectBoatsBring = Value       
+            end)
+
             Sea2:Button("Refresh Boats Dropdown",function()
                 BoatsName = {}
                 Boats:Clear()
