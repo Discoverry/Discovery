@@ -2237,9 +2237,6 @@ spawn(function()
                     if v.Name == "Core" and v.Humanoid.Health > 0 then
                         repeat wait(getgenv().Fast_Delay)
                             AttackNoCoolDown()
-                            repeat Tween(CFrame.new(448.46756, 199.356781, -441.389252))
-                                wait()
-                            until not getgenv().Factory or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(448.46756, 199.356781, -441.389252)).Magnitude <= 10
                             EquipTool(SelectWeapon)
                             AutoHaki()
                             Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -2263,6 +2260,49 @@ spawn(function()
         end
     end
 end)
+--AutoStats
+spawn(function()
+    while wait() do
+        if getgenv().AutoAddStats then
+            if getgenv().SelectAddStats == "Demon Fruit" then
+                local args = {
+                    [1] = "AddPoint",
+                    [2] = "Demon Fruit",
+                    [3] = 10
+                }
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            elseif getgenv().SelectAddStats == "Gun" then
+                local args = {
+                    [1] = "AddPoint",
+                    [2] = "Gun",
+                    [3] = 10
+                }        
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            elseif getgenv().SelectAddStats == "Sword" then
+                local args = {
+                    [1] = "AddPoint",
+                    [2] = "Sword",
+                    [3] = 10
+                }     
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            elseif getgenv().SelectAddStats == "Defense" then
+                local args = {
+                    [1] = "AddPoint",
+                    [2] = "Defense",
+                    [3] = 10
+                }         
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            elseif getgenv().SelectAddStats == "Melee" then
+                local args = {
+                    [1] = "AddPoint",
+                    [2] = "Melee",
+                    [3] = 10
+                }       
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            end
+        end
+    end
+    end)
 --AutoSaber
 spawn(function()
 	while task.wait() do
@@ -4547,6 +4587,16 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
               end)
 ----------------------------------------------------------------------------------------------------------------------------------------
 --Others Farm
+            Farm:Seperator("Stats")
+
+            Farm:Dropdown("Select Add Stats",{'Demon Fruit','Gun','Sword','Defense','Melee'},"",function(Value)
+                getgenv().SelectAddStats = Value
+            end)
+
+            Farm:Toggle("Auto Add Stats",false,function(Value)
+                getgenv().AutoAddStats = Value
+            end)
+
             Farm:Seperator("First Sea Items")
 
             Farm:Toggle("Auto Saber",false,function(Value)
@@ -5280,7 +5330,7 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
                 local Hour = math.floor(GameTime/(60^2))%24
                 local Minute = math.floor(GameTime/(60^1))%60
                 local Second = math.floor(GameTime/(60^0))%60
-                    Time:Set("[GameTime] : Hours : "..Hour.." Minutes : "..Minute.." Seconds : "..Second)
+                    Time:Set("< Game Time > : Hours : "..Hour.." Minutes : "..Minute.." Seconds : "..Second)
                 end
             spawn(function()
                 while task.wait() do
@@ -5295,9 +5345,9 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
                 while wait() do
                     pcall(function()
                         if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
-                            StatusElite:Set("Elite Boss : 🟢 | Total:  "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))	
+                            StatusElite:Set("Status Elite Hunter : 🟢 | Totals:  "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))	
                         else
-                            StatusElite:Set("Elite Boss : 🔴 | Total: "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))	
+                            StatusElite:Set("Status Elite Hunter : 🔴 | Totals: "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))	
                         end
                     end)
                 end
@@ -5314,7 +5364,7 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
                         elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
                             Mob_Kill_Cake_Prince:Set("Status Cake Mobs : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39).."/500")
                         else
-                            Mob_Kill_Cake_Prince:Set("Cake Prince : 🟢")
+                            Mob_Kill_Cake_Prince:Set("Status Cake Boss : 🟢")
                         end
                     end)
                 end
@@ -5323,9 +5373,9 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
             local StatusKitsune = Sta:Label("")
             function UpdateKitsune()
                 if game.Workspace._WorldOrigin.Locations:FindFirstChild('Kitsune Island') then
-                    StatusKitsune:Set("Kitsune Island : 🟢")
+                    StatusKitsune:Set("Status Kitsune Island : 🟢")
                 else
-                    StatusKitsune:Set("Kitsune Island : 🔴")
+                    StatusKitsune:Set("Status Kitsune Island : 🔴")
                 end
             end
             spawn(function()
@@ -5370,14 +5420,14 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
                 spawn(function()
                     pcall(function()
                         while wait() do
-                            StatusMirage:Set("Mirage Island: "..MirageStatus.." | Full Moon: "..FullMoonStatus)
+                            StatusMirage:Set("Status Mirage Island: "..MirageStatus.." | Status Full Moon: "..FullMoonStatus)
                         end
                     end)
                 end)
 
-            Sta2:Seperator("Informations Hub")
-            Sta2:Label("Script made by: piamla")
-            Sta2:Label("Discord:  discord.gg/2v3nFahC")
+            Sta2:Seperator("Informations Script")
+            Sta2:Label("Script Made By: piamla")
+            Sta2:Label("Discord Link: discord.gg/2v3nFahC")
             Sta2:Button("Copy Discord Link",function()
                 setclipboard("discord.gg/2v3nFahC")
             end)
