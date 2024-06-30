@@ -1645,14 +1645,14 @@ spawn(function()
     end
   end)
 --FarmElite
-EliteNe = {'Diablo','Deandre','Urban'}
+--EliteNe = {'Diablo','Deandre','Urban'}
 spawn(function()
     while task.wait() do
         if getgenv().AutoElite then
             pcall(function()
-                if not string.find(QuestTitle, EliteNe) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-                end
+                --if not string.find(QuestTitle, EliteNe) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                --    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                --end
                     if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
                     if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Diablo") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Deandre") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Urban") then
                         if game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
