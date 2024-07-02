@@ -1061,7 +1061,7 @@ function GetCurrentBlade()
     while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
     return ret
 end
-function AttackNoCoolDown() 
+function DiscoveryAttack() 
     local AC = CbFw2.activeController
     for i = 1, 1 do 
         local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
@@ -1237,7 +1237,7 @@ spawn(function()
                         if v.Name == getgenv().SelectBoss then
                             if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
@@ -1276,7 +1276,7 @@ spawn(function()
       if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
       if v.Name == Ms then
       repeat wait(getgenv().Fast_Delay)
-      AttackNoCoolDown()
+      DiscoveryAttack()
       bringmob = true
       AutoHaki()
       EquipTool(SelectWeapon)
@@ -1308,7 +1308,7 @@ spawn(function()
       if v.Name then
       if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChild("HumanoidRootPart").Position).Magnitude <= 5000 then
         repeat wait(getgenv().Fast_Delay)
-            AttackNoCoolDown()
+            DiscoveryAttack()
             bringmob = true
       AutoHaki()
       EquipTool(SelectWeapon)
@@ -1343,7 +1343,7 @@ spawn(function()
                         if v.Name == "Isle Outlaw" or v.Name == "Island Boy" or v.Name == "Sun-kissed Warrior" or v.Name == "Isle Champion" then
                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                repeat wait(getgenv().Fast_Delay)
-                                   AttackNoCoolDown()
+                                   DiscoveryAttack()
                                    bringmob = true
                                    AutoHaki()
                                    EquipTool(SelectWeapon)
@@ -1377,7 +1377,7 @@ spawn(function()
                         if getgenv().CastleRaid and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                             if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 2000 then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
@@ -1388,7 +1388,7 @@ spawn(function()
                         end
                     end
                 else
-                    toTarget(CFrameCastleRaid)
+                toTarget(CFrameCastleRaid)
                 end
             end)
         end
@@ -1417,7 +1417,7 @@ spawn(function()
                                                   if v.Name == "Reborn Skeleton" or v.Name == "Living Zombie" or v.Name == "Demonic Soul" or v.Name == "Posessed Mummy" then
                                                       if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Demonic Soul") then
                                                           repeat wait(getgenv().Fast_Delay)
-                                                              AttackNoCoolDown()
+                                                              DiscoveryAttack()
                                                               AutoHaki()
                                                               bringmob = true
                                                               EquipTool(SelectWeapon)
@@ -1453,7 +1453,7 @@ spawn(function()
                         if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                         if v.Name == "Reborn Skeleton" or v.Name == "Living Zombie" or v.Name == "Demonic Soul" or v.Name == "Posessed Mummy" then
                           repeat wait(getgenv().Fast_Delay)
-                          AttackNoCoolDown()
+                          DiscoveryAttack()
                           AutoHaki()
                           bringmob = true
                           EquipTool(SelectWeapon)
@@ -1510,7 +1510,7 @@ spawn(function()
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do 
                             if v.Name == "Cake Prince" then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
@@ -1528,7 +1528,7 @@ spawn(function()
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do  
                             if (v.Name == "Baking Staff" or v.Name == "Head Baker" or v.Name == "Cake Guard" or v.Name == "Cookie Crafter") and v.Humanoid.Health > 0 then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     bringmob = true
                                     EquipTool(SelectWeapon)
@@ -1574,7 +1574,7 @@ spawn(function()
                         if v.Name == "Ship Steward" or v.Name == "Ship Engineer" or v.Name == "Ship Deckhand" or v.Name == "Ship Officer" and v:FindFirstChild("Humanoid") then
                             if v.Humanoid.Health > 0 then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     bringmob = true
                                     EquipTool(SelectWeapon)
@@ -1614,7 +1614,7 @@ spawn(function()
       if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
       if v.Name == MMon then
       repeat wait(getgenv().Fast_Delay)
-      AttackNoCoolDown()
+      DiscoveryAttack()
       AutoHaki()
       bringmob = true
       EquipTool(SelectWeapon)
@@ -1660,7 +1660,7 @@ spawn(function()
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     if v.Name == "Diablo" or v.Name == "Deandre" or v.Name == "Urban" then
                                      repeat wait(getgenv().Fast_Delay)
-                                         AttackNoCoolDown()
+                                         DiscoveryAttack()
                                             EquipTool(SelectWeapon)
                                             AutoHaki()
                                             toTarget(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -1811,7 +1811,7 @@ end
 bs = tick()
 task.spawn(function()
     while task.wait(getgenv().DelayFastLow) do
-        if getgenv().FastNelow then
+        if getgenv().AttackLowDevides then
             _G.Fast = true
             if bs - tick() > 0.75 then
                 task.wait()
@@ -1940,7 +1940,7 @@ spawn(function()
         end
     end
     end)
---RemoveAllNotify
+--RemoveNotify
 spawn(function()
     while wait() do
         if getgenv().RemoveNotify then
@@ -1991,8 +1991,8 @@ task.spawn(function()
     end
 end)
 --SelectFastAttack
-getgenv().DelayFastLow = 0.15
-getgenv().Fast_Delay = 0.018
+getgenv().DelayFastLow = 0.175
+getgenv().Fast_Delay = 0.0185
 spawn(function()
     while wait(.1) do
         if getgenv().SelectFastAttack then
@@ -2002,7 +2002,7 @@ spawn(function()
                 elseif getgenv().SelectFastAttack == "Smooth" then
                     getgenv().Fast_Delay = 0.12
                 elseif getgenv().SelectFastAttack == "Fast" then
-                    getgenv().Fast_Delay = 0.018
+                    getgenv().Fast_Delay = 0.0185
                 end
             end)
         end
@@ -2207,7 +2207,7 @@ spawn(function()
                         for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                             if v.Name == "Zombie" then
                                  repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     EquipTool(SelectWeapon)
                                     Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))		
                                 until Back:FindFirstChild("Flower 3")
@@ -2240,7 +2240,7 @@ spawn(function()
                 for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if v.Name == "Core" and v.Humanoid.Health > 0 then
                         repeat wait(getgenv().Fast_Delay)
-                            AttackNoCoolDown()
+                            DiscoveryAttack()
                             EquipTool(SelectWeapon)
                             AutoHaki()
                             Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -2358,7 +2358,7 @@ spawn(function()
 											   if game:GetService("Workspace").Enemies:FindFirstChild("Mob Leader") then
 												if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 													repeat wait(getgenv().Fast_Delay)
-													AttackNoCoolDown()()
+													DiscoveryAttack()()
 													AutoHaki()
 													EqiupTool(SelectWeapon)
 													v.HumanoidRootPart.CanCollide = false
@@ -2391,7 +2391,7 @@ spawn(function()
 							if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 								if v.Name == "Saber Expert" then
 									repeat wait(getgenv().Fast_Delay)
-										AttackNoCoolDown()
+										DiscoveryAttack()
 										EqiupTool(SelectWeapon)
 										Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
 										v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
@@ -2423,7 +2423,7 @@ spawn(function()
                         if v.Name == "Thunder God" then
                             if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
@@ -2459,7 +2459,7 @@ spawn(function()
                     for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                         if (v.Name == "Snow Lurker" or v.Name == "Arctic Warrior") and v.Humanoid.Health > 0 then
                             repeat wait(getgenv().Fast_Delay)
-                                AttackNoCoolDown()
+                                DiscoveryAttack()
                                 AutoHaki()
                                 EquipTool(SelectWeapon)
                                 v.HumanoidRootPart.CanCollide = false
@@ -2491,7 +2491,7 @@ spawn(function()
                                 if v.Name == "Swan Pirate" then
                                     pcall(function()
                                         repeat wait(getgenv().Fast_Delay)
-                                            AttackNoCoolDown()
+                                            DiscoveryAttack()
                                             AutoHaki()
                                             EquipTool(SelectWeapon)
                                             v.HumanoidRootPart.CanCollide = false
@@ -2517,7 +2517,7 @@ spawn(function()
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Jeremy" then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
@@ -2570,7 +2570,7 @@ spawn(function()
                     for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                         if string.find(v.Name , "Soul Reaper") then
                             repeat wait(getgenv().Fast_Delay)
-                                AttackNoCoolDown()
+                                DiscoveryAttack()
                                 AutoHaki()
                                 EquipTool(SelectWeapon)
                                 v.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -2648,7 +2648,7 @@ spawn(function()
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == ("Longma" or v.Name == "Longma") and v.Humanoid.Health > 0 and v:IsA("Model") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") then
                              repeat wait(getgenv().Fast_Delay)
-                                 AttackNoCoolDown()
+                                 DiscoveryAttack()
                                     AutoHaki()
                                     if not game.Players.LocalPlayer.Character:FindFirstChild(SelectWeapon) then
                                     wait()
@@ -2679,7 +2679,7 @@ spawn(function()
                             if v.Name == "Dough King" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat wait(getgenv().Fast_Delay)
-                                        AttackNoCoolDown()
+                                        DiscoveryAttack()
                                         AutoHaki()
                                         EquipTool(SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
@@ -2712,7 +2712,7 @@ spawn(function()
                         if getgenv().CastleRaid and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                             if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 2000 then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
@@ -2884,6 +2884,7 @@ elseif Third_Sea then
 IslandList = {"Mansion","Port Town","Great Tree","Castle On The Sea","MiniSky", "Hydra Island","Floating Turtle","Haunted Castle","Ice Cream Island","Peanut Island","Cake Island","Cocoa Island","Candy Island","Tiki Outpost",}
 end
 --Local
+local Discovery = CFrame.new(posX,posY,posZ)
 local P = game:GetService("Players")
 local LP = P.LocalPlayer
 local PG = LP.PlayerGui
@@ -3973,7 +3974,7 @@ spawn(function()
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Order" then
                                 repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -4132,7 +4133,7 @@ spawn(function()
                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     bringmob = true
                                     repeat wait(getgenv().Fast_Delay)
-                                    AttackNoCoolDown()
+                                    DiscoveryAttack()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
@@ -4404,7 +4405,7 @@ SkillsList = {"Geppo","Soru","Ken Haki","Buso Haki"}
 --ShopsList
 ShopsList = {"Katana [1,000]","Cutlass [1,000]","Duel Katana [12,000]","Iron Mace [25,000]","Pipe [100,000]","Triple Katana [60,000]", "Dual-Headed Blade [400,000]", "Bisento [1,000,000]", "Soul Cane [750,000]", "Slingshot [5,000]", "Musket [8,000]", "Flintlock [10,500]", "Refined Flintlock [65,000]", "Cannon [100,000]", "Kabucha [1500F]","Black Cape [50,000]", "Toemo Ring [500,000]", "Swordsman Hat [150,000]"}
 --OhersLits
-OthersList = {"Refund Stats","Reroll Race"}
+OthersList = {"Refund Stats","Reroll Race","Race Ghoul","Race Cyborg"}
 --MusicsList
 ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisChief','Squid Game','SOS','2 Guns','Stay','Fatal Breath','Reason to Stay','Only You','Diss na Hagi Lagi (Nightcore)','Dream Girl (sped up)','Ocean Eyes','Broken Glass','Same Mistake','Alone','Thinking About You','Hold On','New World','Rest For Life','Vip Me','Color','Night Out (feat. Esther Dee)','Crab Rave','Unbreakable','Can You ?','White Tee','WRLD Hang Up','Free Fire','Chipi Chipi Speed','Blod Blod','Play It Cool','No Sleep','Shine','Gojo','Gambare Senpai','Din1c-DOWN2KILL','Waka Waka','Rickroll','Preytty Girl','Không Nên Tò Mò','Phonk #1','Phonk #2','Phonk #3','Phonk #4','Phonk #5'}
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -4424,7 +4425,7 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
             end)
 
             Setting:Toggle("Enabled Attack For Low Devides",false,function(Value)
-              getgenv().FastNelow = Value
+              getgenv().AttackLowDevides = Value
             end)
 
             Setting:Toggle("Enabled Bring Mobs",true,function(Value)
@@ -5664,6 +5665,14 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
                 elseif getgenv().SelectOthers == "Reroll Race" then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Reroll", "1")
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Reroll", "2")
+                elseif getgenv().SelectOthers == "Race Ghoul" then
+                    local args = {[1] = "Ectoplasm", [2] = "BuyCheck", [3] = 4}
+                    RS.Remotes.CommF_:InvokeServer(unpack(args))
+                local args = {[1] = "Ectoplasm", [2] = "Change", [3] = 4}
+                    RS.Remotes.CommF_:InvokeServer(unpack(args))
+                elseif getgenv().SelectOthers == "Race Cyborg" then
+                    local args = {[1] = "CyborgTrainer", [2] = "Buy"}
+                    RS.Remotes.CommF_:InvokeServer(unpack(args))
                 end
             end)
 
