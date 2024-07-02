@@ -2769,6 +2769,30 @@ spawn(function()
 		end
 	end
 end)
+--TurnRaceV3
+spawn(function()
+    while wait() do
+        pcall(function()
+            if getgenv().TurnRaceV3 then
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"T",false,game)
+                wait(.1)
+                game:GetService("VirtualInputManager"):SendKeyEvent(false,"T",false,game)
+            end
+        end)
+    end
+end)
+--TurnRaceV4
+spawn(function()
+    while wait() do
+        pcall(function()
+            if getgenv().TurnRaceV4 then
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
+                wait(.1)
+                game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
+            end
+        end)
+    end
+end)
 --NoClip
 spawn(function()
     pcall(function()
@@ -4875,6 +4899,24 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
             end)
 
             Player:Seperator("Others")
+
+            Player:Toggle("Turn Race V3",false,function(Value)
+                getgenv().TurnRaceV3 = Value
+                if Value == false then
+                    wait()
+                    Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+                    wait()
+                end
+            end)
+
+            Player:Toggle("Turn Race V4",false,function(Value)
+                getgenv().TurnRaceV4 = Value
+                if Value == false then
+                    wait()
+                    Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+                    wait()
+                end
+            end)
 
             Player:Toggle("No Clip",false,function(Value)
                 getgenv().LOf = Value
