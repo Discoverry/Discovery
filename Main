@@ -34,7 +34,11 @@ local Sea2 = Tab6:CraftPage(2)
 --Shops - Miscs
 local S = Tab7:CraftPage(1)
 local M = Tab7:CraftPage(2)
-----------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------
+--BanPlayer
+if game.Players.LocalPlayer.Name == "Ruagjy" then 
+    game.Players.Ruagjy:kick("Skill Issue - Van De Ki Nang")
+ end
 --Musics
 pcall(function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.Sound:Destroy()
