@@ -2079,27 +2079,27 @@ spawn(function()
   local DevilFruitMastery = game:GetService("Players").LocalPlayer.Character:FindFirstChild(game.Players.LocalPlayer.Data.DevilFruit.Value).Level.Value
   if getgenv().Z and DevilFruitMastery >= 1 then
   game:service('VirtualInputManager'):SendKeyEvent(true, "Z", false, game)
-  wait(0.5)
+  wait(0.2)
   game:service('VirtualInputManager'):SendKeyEvent(false, "Z", false, game)
   end
   if getgenv().X and DevilFruitMastery >= 1 then
   game:service('VirtualInputManager'):SendKeyEvent(true, "X", false, game)
-  wait(0.5)
+  wait(0.2)
   game:service('VirtualInputManager'):SendKeyEvent(false, "X", false, game)
   end
   if getgenv().C and DevilFruitMastery >= 1 then
   game:service('VirtualInputManager'):SendKeyEvent(true, "C", false, game)
-  wait(0.5)
+  wait(0.2)
   game:sevice('VirtualInputManager'):SendKeyEvent(false, "C", false, game)
   end
   if getgenv().V and DevilFruitMastery >= 1 then
   game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
-  wait(0.5)
+  wait(0.2)
   game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
   end
   if getgenv().F and DevilFruitMastery >= 1 then
   game:GetService("VirtualInputManager"):SendKeyEvent(true, "F", false, game)
-  wait(0.5)
+  wait(0.2)
   game:GetService("VirtualInputManager"):SendKeyEvent(false, "F", false, game)
   end
   end
