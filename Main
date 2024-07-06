@@ -4,7 +4,7 @@ local Win = library:Evil()
 local Tab8 = Win:Tab("Status Server",14477673361)
 local Tab = Win:Tab("Main",14477284625)
 local Tab2 = Win:Tab("Others Farm",14477543197)
-local Tab3 = Win:Tab("Players - Teleports",14477517268)
+local Tab3 = Win:Tab("Players - Travel",14477517268)
 local Tab4 = Win:Tab("Fruits - Raids",14537413902)
 local Tab5 = Win:Tab("Race V4",14477598542)
 local Tab6 = Win:Tab("Sea Events",14477621526)
@@ -2079,27 +2079,27 @@ spawn(function()
   local DevilFruitMastery = game:GetService("Players").LocalPlayer.Character:FindFirstChild(game.Players.LocalPlayer.Data.DevilFruit.Value).Level.Value
   if getgenv().Z and DevilFruitMastery >= 1 then
   game:service('VirtualInputManager'):SendKeyEvent(true, "Z", false, game)
-  wait(0.2)
+
   game:service('VirtualInputManager'):SendKeyEvent(false, "Z", false, game)
   end
   if getgenv().X and DevilFruitMastery >= 1 then
   game:service('VirtualInputManager'):SendKeyEvent(true, "X", false, game)
-  wait(0.2)
+
   game:service('VirtualInputManager'):SendKeyEvent(false, "X", false, game)
   end
   if getgenv().C and DevilFruitMastery >= 1 then
   game:service('VirtualInputManager'):SendKeyEvent(true, "C", false, game)
-  wait(0.2)
+
   game:sevice('VirtualInputManager'):SendKeyEvent(false, "C", false, game)
   end
   if getgenv().V and DevilFruitMastery >= 1 then
   game:service('VirtualInputManager'):SendKeyEvent(true, "V", false, game)
-  wait(0.2)
+
   game:service('VirtualInputManager'):SendKeyEvent(false, "V", false, game)
   end
   if getgenv().F and DevilFruitMastery >= 1 then
   game:GetService("VirtualInputManager"):SendKeyEvent(true, "F", false, game)
-  wait(0.2)
+
   game:GetService("VirtualInputManager"):SendKeyEvent(false, "F", false, game)
   end
   end
@@ -2126,7 +2126,7 @@ spawn(function()
       for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
       if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") then
       if v.Name == Ms then
-        repeat wait(getgenv().Fast_Delay)
+        repeat wait(.1)
         if v.Humanoid.Health <= v.Humanoid.MaxHealth * getgenv().HealthMob / 100 then
         getgenv().UseSkill = true
         else
@@ -2157,7 +2157,7 @@ end
       for i,v in pairs (game.Workspace.Enemies:GetChildren()) do
       if v.Name and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") then
       if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChild("HumanoidRootPart").Position).Magnitude <= 5000 then
-        repeat wait(getgenv().Fast_Delay)
+        repeat wait(.1)
       if v.Humanoid.Health <= v.Humanoid.MaxHealth * getgenv().HealthMob / 100 then
       getgenv().UseSkill = true
       else
