@@ -5499,9 +5499,9 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
 
             Sta2:Seperator("Informations Script")
             Sta2:Label("Script Made By: piamla")
-            Sta2:Label("Discord Link: discord.gg/2v3nFahC")
+            Sta2:Label("Discord Link: https://discord.com/invite/GmKutvPym9")
             Sta2:Button("Copy Discord Link",function()
-                setclipboard("discord.gg/2v3nFahC")
+                setclipboard("https://discord.com/invite/GmKutvPym9")
             end)
 ----------------------------------------------------------------------------------------------------------------------------------------
 --Shops - Miscs
