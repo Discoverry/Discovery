@@ -1961,6 +1961,11 @@ spawn(function()
     while task.wait(.1) do
     if getgenv().AutoMasFruit and getgenv().TypeMastery == 'Level' then
     pcall(function()
+        if getgenv().AutoMasFruit == true then
+            getgenv().FastAttackSida = false
+        else
+            getgenv().FastAttackSida = true
+        end
       CheckLevel(SelectMonster)
       if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
       game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
@@ -1988,10 +1993,12 @@ spawn(function()
         v.HumanoidRootPart.CanCollide = false
         FarmPos = v.HumanoidRootPart.CFrame
         MonFarm = v.Name
+        --getgenv().FastAttackSida = false
         NormalAttack()
         end
         until not getgenv().AutoMasFruit or not v.Parent or v.Humanoid.Health == 0 or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or not getgenv().TypeMastery == 'Level'
         bringmob = false
+        --getgenv().FastAttackSida = true
         getgenv().UseSkill = false
         end
      end
@@ -2019,10 +2026,12 @@ end
       v.HumanoidRootPart.CanCollide = false
       FarmPos = v.HumanoidRootPart.CFrame
       MonFarm = v.Name
+      --getgenv().FastAttackSida = false
       NormalAttack()
       end
       until not getgenv().AutoMasFruit or not MasteryType == 'Mob Aura' or not v.Parent or v.Humanoid.Health == 0 or not getgenv().TypeMastery == 'Mob Aura'
       bringmob = false
+      --getgenv().FastAttackSida = true
       getgenv().UseSkill = false
     end
 end
