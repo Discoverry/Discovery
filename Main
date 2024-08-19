@@ -860,7 +860,7 @@ function Tween(Pos)
                 WaitBBC(game.Players.LocalPlayer).CFrame = PartTele.CFrame
             end)
         end
-        local BBCEarthChannel = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.PartTele, TweenInfo.new(Distance / 300, Enum.EasingStyle.Linear), {CFrame = Pos})
+        local BBCEarthChannel = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.PartTele, TweenInfo.new(Distance / 290, Enum.EasingStyle.Linear), {CFrame = Pos})
         BBCEarthChannel:Play()
         if Distance <= 250 then
                 BBCEarthChannel:Cancel()
