@@ -1,4 +1,6 @@
 --Notify
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 Notification:Notify(
    {Title = "CoJC", Description = "at Trung Phú"},
    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "option"},
@@ -7,8 +9,6 @@ Notification:Notify(
 wait(2)
 --Loadstring
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PNguyen0199/UiLib/main/UiLib2",true))()
-local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
-local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 --Create Tabs
 local Win = library:Evil()
 local Tab8 = Win:Tab("Status",14477673361)
