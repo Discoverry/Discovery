@@ -2,7 +2,7 @@
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 Notification:Notify(
-   {Title = "CoJC", Description = "at Trung Phú"},
+   {Title = "CoJC", Description = "at Trung Phu"},
    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "option"},
    {Image = "http://www.roblox.com/asset/?id=", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
 )
@@ -870,9 +870,9 @@ function Tween(Pos)
                 WaitBBC(game.Players.LocalPlayer).CFrame = PartTele.CFrame
             end)
         end
-        local BBCEarthChannel = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.PartTele, TweenInfo.new(Distance / 290, Enum.EasingStyle.Linear), {CFrame = Pos})
+        local BBCEarthChannel = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.PartTele, TweenInfo.new(Distance / 270, Enum.EasingStyle.Linear), {CFrame = Pos})
         BBCEarthChannel:Play()
-        if Distance <= 250 then
+        if Distance <= 240 then
                 BBCEarthChannel:Cancel()
                 game.Players.LocalPlayer.Character.PartTele.CFrame = Pos
             end
@@ -4284,7 +4284,7 @@ ListMusics = {'Quốc Ca Việt Nam','I Love (slow+reverb version)','Sad','MisCh
               getgenv().ChooseWeapon = Value
             end)
 
-            Setting:Toggle("Enabled Fast Attack",true,function(Value)
+            Setting:Toggle("Enabled Fast Attack (maybe kick)",false,function(Value)
               getgenv().FastAttackSida = Value
             end)
 
